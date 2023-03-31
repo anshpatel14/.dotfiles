@@ -6,3 +6,4 @@ This is my custom .vimrc configuration for Vim.
 This is my custom .bashrc configuration for Bash.
 # .dotfiles
 # .dotfiles
+# .dotfiles
