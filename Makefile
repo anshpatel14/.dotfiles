@@ -1,4 +1,4 @@
-linux: 
+linux:  
 	chmod 700 ./bin/linux.sh
 	./bin/linux.sh 
 

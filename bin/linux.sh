@@ -1,21 +1,18 @@
 #!/bin/bash
-LINUX=$(uname)
-X=Linux
-if [ $LINUX != "LINUX" ];
-then	
+OS=$(uname -s)
+if [ $OS != "Linux" ]; then
 	echo "OS is not Linux" >> linuxsetup.log 
 	exit
 else
 	mkdir -p ~/.TRASH
+	if [ -f ~/.vimrc ]; then 
+		mv ~/.vimrc ~/.bup_vimrc
+	fi
 
-		if [ -f ./.vimrc ]
-		then 
-			mv ~/.vimrc ~/.bup_vimrc
-		fi 	
 	echo "Current .vimrc has been changed to .bup_vimrc" >> linuxsetup.log
 
-	cat ~/.dotfiles/etc/vimrc > ~/vimrc
+	cat ~/.dotfiles/etc/vimrc > ~/.vimrc
 
-	echo "source ∼/.dotfiles/etc/bashrc custom" >> ~/.bashrc
+	echo "source ~/.dotfiles/etc/bashrc_custom" >> ~/.bashrc
 fi
 
